@@ -32,7 +32,7 @@ Have a lot of decompiling fun!
 
 PS: when I first decompiled this code, I posted some comments on a [french abandonware related forum](https://www.abandonware-forums.org/), you can take a look [here](https://www.abandonware-forums.org/forum/forum-ltf-abandonware-france/le-bar-des-amis/36760-ultima-vi-les-codes-sources-r%C3%A9g%C3%A9n%C3%A9r%C3%A9s?35874-Ultima-VI-les-codes-sources-r%E9g%E9n%E9r%E9s=).
 
-# Steps to compile
+# Steps to compile from ergonomy-joe/u6-decompiled
 
 1. Download dosbox https://www.dosbox.com
 1. Launch dosbox
@@ -68,11 +68,11 @@ PS: when I first decompiled this code, I posted some comments on a [french aband
 	1. >imgmount a D:\Disk01.IMG -t floppy
 	1. >a:
 	1. >install.exe
-	1. Turbo Assembler Directory: C:\TOOLS\TASM
-	1. Turbo Assembler Example Directory: C:\TOOLS\TASM
-	1. Unzip Example Files: No
-	1. Start Installation
-	1. When it asks to insert example files Abort out of the installation
+		1. Turbo Assembler Directory: C:\TOOLS\TASM
+		1. Turbo Assembler Example Directory: C:\TOOLS\TASM
+		1. Unzip Example Files: No
+		1. Start Installation
+		1. When it asks to insert example files Abort out of the installation
 	1. >imgmount -u a
 	1. >imgmount a D:\MSC2.IMG -t floppy
 	1. >copy A:\EXEPACK.EXE C:\tools
@@ -89,3 +89,8 @@ PS: when I first decompiled this code, I posted some comments on a [french aband
 	1. >DOIT
 	1. >cd ..
 	1. >DOIT
+
+# Steps to compile from files in Fenyx4/u6-decompiled
+1. Download dosbox https://www.dosbox.com
+1. C:\Program Files (x86)\DOSBox-0.74-3\DOSBox.exe -conf E:\Projects\u6-decompiled\DosBox\build-osilib.conf
+1. C:\Program Files (x86)\DOSBox-0.74-3\DOSBox.exe -conf E:\Projects\u6-decompiled\DosBox\dosbox-0.74-3.conf
