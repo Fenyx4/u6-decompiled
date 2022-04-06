@@ -31,3 +31,61 @@ Have a lot of decompiling fun!
 2022/03/29 ergonomy_joe
 
 PS: when I first decompiled this code, I posted some comments on a [french abandonware related forum](https://www.abandonware-forums.org/), you can take a look [here](https://www.abandonware-forums.org/forum/forum-ltf-abandonware-france/le-bar-des-amis/36760-ultima-vi-les-codes-sources-r%C3%A9g%C3%A9n%C3%A9r%C3%A9s?35874-Ultima-VI-les-codes-sources-r%E9g%E9n%E9r%E9s=).
+
+# Steps to compile
+
+1. Download dosbox https://www.dosbox.com
+1. Launch dosbox
+1. Use Ctrl+F12 to speed up to ~15k cycles. It speeds up builds.
+1. >MOUNT c "[Local-Directory]/SRC"
+	e.g. MOUNT c "..\SRC"
+1. Download tools
+	1. Go to https://www.pcjs.org/software/pcx86/util/other/unp/4.11/
+	1. In the dropdown under the command prompt select "UNP (Executable Unpacker) Source"
+	1. Click "Load" and then "Save"
+	1. In the dropdown select "MS C 4.00 (Disk 2)"
+	1. Rename downloaded file to MSC2.img
+	1. In the dropdown select "MS Macro Assembler 3.00"
+	1. Rename downloaded file to MASM300.img
+	1. Go to https://winworldpc.com/product/turbo-assembler/20
+	1. Download Borland Turbo Assembler 2.0 (5.25-360k)
+	1. Extract Disk01.img from the download and play with other img files
+	1. Go to https://winworldpc.com/product/borland-turbo-c/2x
+	1. Download "Borland Turbo C 2.0 (3.5)"
+	1. Extract disk2.img from download and place with other img files
+1. Extract tools
+	1. >mkdir C:\tools
+	1. >mkdir C:\tools\TASM
+	1. >mkdir C:\tools\MASM300
+	1. >mkdir C:\tools\MASM300\LIB
+	1. >mkdir C:\tools\MASM300\INCLUDE
+	1. >mkdir C:\tools\turboc20
+	1. >mkdir C:\ORIGINAL
+	1. >MOUNT d "[Local Directory with img files]"
+	1. >imgmount a D:\UNP411~1.IMG -t floppy
+	1. >copy A:\UNP.EXE C:\TOOLS
+	1. >imgmount -u a
+	1. >imgmount a D:\Disk01.IMG -t floppy
+	1. >a:
+	1. >install.exe
+	1. Turbo Assembler Directory: C:\TOOLS\TASM
+	1. Turbo Assembler Example Directory: C:\TOOLS\TASM
+	1. Unzip Example Files: No
+	1. Start Installation
+	1. When it asks to insert example files Abort out of the installation
+	1. >imgmount -u a
+	1. >imgmount a D:\MSC2.IMG -t floppy
+	1. >copy A:\EXEPACK.EXE C:\tools
+	1. >imgmount -u a
+	1. >imgmount a D:\MASM300.IMG -t floppy
+	1. >copy A:\LINK.EXE C:\tools\MASM300
+	1. >copy A:\LINK.EXE C:\tools
+	1. >copy A:\MASM.EXE C:\tools\MASM300
+	1. >imgmount -u a
+	1. >imgmount a D:\disk2.img -t floppy
+	1. >copy A:\MAKE.EXE C:\TOOLS\TURBOC20
+1. Build
+	1. >cd OSILIB
+	1. >DOIT
+	1. >cd ..
+	1. >DOIT
