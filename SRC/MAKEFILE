@@ -4,7 +4,7 @@ TC = $(TLS)\TURBOC20
 INCLUDE = $(TC)\INCLUDE
 LIB = $(TC)\LIB
 #AS = $(TLS)\tasm200
-AS = $(TLS)\masm300\MASM.EXE
+AS = $(TLS)\masm300
 #AS = $(TLS)\masm400
 
 OBJS = \
@@ -71,7 +71,7 @@ seg_356A.obj: seg_356A.c
 #	$(TLS)\tasm200 /Mx osi_file,,;
 
 bss.obj: bss.asm
-	$(TLS)\tasm\tasm.exe /Mx bss,,;
+	$(TLS)\tasm200 /Mx bss,,;
 
 #mouse.obj: mouse.asm
 #	$(TLS)\tasm200 /Mx mouse,,;

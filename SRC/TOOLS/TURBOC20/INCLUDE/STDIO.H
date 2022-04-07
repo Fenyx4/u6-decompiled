@@ -168,9 +168,7 @@ int      _Cdecl _fputc   (char c, FILE *stream);     /* used by putc() macro */
 #define ferror(f)       ((f)->flags & _F_ERR)
 #define feof(f)         ((f)->flags & _F_EOF)
 #define fileno(f)       ((f)->fd)
-#pragma warn -pro
 #define remove(path)    unlink(path)
-#pragma warn .pro
 
 #define getc(f) \
   ((--((f)->level) >= 0) ? (unsigned char)(++(f)->curp)[-1] : \

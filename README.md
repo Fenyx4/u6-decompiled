@@ -36,7 +36,8 @@ PS: when I first decompiled this code, I posted some comments on a [french aband
 
 1. Download dosbox https://www.dosbox.com
 1. Launch dosbox
-1. Use Ctrl+F12 to speed up to ~15k cycles. It speeds up builds.
+1. >cycles 15000
+	1. This speeds up builds
 1. >MOUNT c "[Local-Directory]/SRC"
 	e.g. MOUNT c "..\SRC"
 1. Download tools
@@ -49,43 +50,42 @@ PS: when I first decompiled this code, I posted some comments on a [french aband
 	1. Rename downloaded file to MASM300.img
 	1. Go to https://winworldpc.com/product/turbo-assembler/20
 	1. Download Borland Turbo Assembler 2.0 (5.25-360k)
-	1. Extract Disk01.img from the download and play with other img files
+	1. Extract Disk01.img from the download and place with other img files
 	1. Go to https://winworldpc.com/product/borland-turbo-c/2x
-	1. Download "Borland Turbo C 2.0 (3.5)"
-	1. Extract disk2.img from download and place with other img files
+	1. Download "Borland Turbo C 2.0 (1988) (3.5-720k)"
+	1. Extract disk02.img and disk03.img from download and place with other img files
 1. Extract tools
 	1. >mkdir C:\tools
-	1. >mkdir C:\tools\TASM
-	1. >mkdir C:\tools\MASM300
-	1. >mkdir C:\tools\MASM300\LIB
-	1. >mkdir C:\tools\MASM300\INCLUDE
 	1. >mkdir C:\tools\turboc20
-	1. >mkdir C:\ORIGINAL
+	1. >mkdir C:\tools\turboc20\include
+	1. >mkdir C:\tools\turboc20\lib
 	1. >MOUNT d "[Local Directory with img files]"
 	1. >imgmount a D:\UNP411~1.IMG -t floppy
 	1. >copy A:\UNP.EXE C:\TOOLS
 	1. >imgmount -u a
 	1. >imgmount a D:\Disk01.IMG -t floppy
 	1. >a:
-	1. >install.exe
-		1. Turbo Assembler Directory: C:\TOOLS\TASM
-		1. Turbo Assembler Example Directory: C:\TOOLS\TASM
-		1. Unzip Example Files: No
-		1. Start Installation
-		1. When it asks to insert example files Abort out of the installation
+	1. >mkdir D:\TASM
+	1. >unzip TASM.ZIP D:\TASM
+	1. >copy A:\TASM.EXE C:\TOOLS\TASM200.EXE
 	1. >imgmount -u a
 	1. >imgmount a D:\MSC2.IMG -t floppy
 	1. >copy A:\EXEPACK.EXE C:\tools
 	1. >imgmount -u a
 	1. >imgmount a D:\MASM300.IMG -t floppy
-	1. >copy A:\LINK.EXE C:\tools\MASM300
-	1. >copy A:\LINK.EXE C:\tools
-	1. >copy A:\MASM.EXE C:\tools\MASM300
+	1. >copy A:\MASM.EXE C:\TOOLS\MASM300.EXE
 	1. >imgmount -u a
-	1. >imgmount a D:\disk2.img -t floppy
-	1. >copy A:\MAKE.EXE C:\TOOLS\TURBOC20
+	1. >imgmount a D:\disk02.img -t floppy
+	1. >copy A:\*.EXE C:\TOOLS\TURBOC20\
+	1. >imgmount -u a
+	1. >imgmount a D:\disk03.img -t floppy
+	1. >copy A:\TLIB.EXE C:\TOOLS\TURBOC20\TLIB.EXE
+	1. >copy A:\*.H C:\TOOLS\TURBOC20\INCLUDE\
+	1. >copy A:\*.OBJ C:\TOOLS\TURBOC20\LIB\
+	1. >copy A:\*.LIB C:\TOOLS\TURBOC20\LIB\
 1. Build
-	1. >cd OSILIB
+	1. >C:
+	1. >cd C:\OSILIB
 	1. >DOIT
 	1. >cd ..
 	1. >DOIT
